@@ -6,6 +6,10 @@ Keep in mind that many of these processes take a moment,
 while the image/csv is processing the pygame window might not respond.
 Be patient and wait for the file to run.
 
+The drawing could take under a minute, but it can also take very, very long.
+It just depends on how much detail you have in it, most detailed drawings take ages.
+I suggest you just record the pygame window and potentially timelapse it after.
+
 
 Instructions to trace an image:
   run FindEdges on the desired file.
