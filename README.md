@@ -1,5 +1,5 @@
 # DFT
-Files that take you from a jpeg or jpg file to the plotting of a the outline via a DFT.
+Transforms a jpeg into the plotting of the edges of the image via a DFT and epicycles.
 
 
 Keep in mind that many of these processes take a moment,
