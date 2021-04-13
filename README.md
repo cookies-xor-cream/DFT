@@ -93,9 +93,6 @@ There are a few points in this algorithm that significantly hinder performance:
     Nearest neighbour search (in the TSP)
     The DFT itself
     Computation of the path of the image itself (the actual drawing part)
-  
-<br>
-<h3> Solutions and Implementations of Optimizations </h3>
 
 <br>
 <h4> Kernel Convolution </h4>
