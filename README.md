@@ -13,38 +13,6 @@
 
 <br>
 
-<span> Transforms a jpeg, jpg, or png image into the plotting of the edges of the image by epicycles. </span>
-
-<br><br>
-<h2> Purpose and Goal of the project </h2>
-
-The Fourier transform is widely used in image compression in order to turn a series of colour values into a series of functions that can approximate those colour values with less space.
-
-My goal in making this project wasn't to create an efficient and sleek application. It was to explore the mathematics and concepts behind lossy compression and create a working implementation of DFT, there are many places where this algorithm could be more efficient (and if you want to create a high performance implementation then refer to the "Optimizations" sections to figure out how to change my algorithm to streamline performance.
-
-My choice of not using libraries (numpy, pillow, etc.) and using python as opposed to something with better performance like C++ was intentional. I wanted to build a fully working prototype from first principles: including all the functionality needed to implement such an algorithm such at image convolutions or the DFT algorithm itself.
-
-My implementations of these algorithms are not generic and are specialized towards the usecase of this project, so be aware that there are superior alternatives if you are trying to adapt them to a different circumstance.
-
-<br><br>
-<h2> Algorithm Overview </h2>
-
-An image is taken as an input, a Sobel filter is passed over it. A list of the edges are written into a CSV file.
-Then a greedy approximation of the Travelling Salesman Problem (TSP) is used to find a suitable path around the edges.
-Once this path is computed the x and y coordinates are separated into 2 different sequences.
-A Discrete Fourier Transform (DFT) is ran over these
-
-<br><br>
-<h2> Disclaimer </h2>
-
-Keep in mind that many of these processes take a moment,
-while the image/csv is processing the pygame window will stop responding.
-Flushing the pygame event queue will fix the freezing but significantly the runtime.
-Please be patient and wait for the file to run.
-
-A small image will take under a minute to fully process and then a few minutes to draw.
-Large images can take a very, very long time.
-
 <br><br>
 <h2> Dependencies </h2>
 
@@ -85,7 +53,37 @@ Once you think the path is correct, run DFTSketch:
 filename: the filename of any jpg or jpeg file. I'm not sure if it works
 threshold: this is how sensetive the function is to flagging a point as an edge. The lower the number, the better.
 downscale: this is how small your image will be scaled, it can be any float, higher numbers mean smaller images.
-fidelity: highest fidelity is 1, this can be any integer, the higher it is, the lower the fidelity
+fidelity: highest fidelity is 1, this can be any integer, the higher it is, the lower the fidelity.
+
+<br><br>
+<h2> Purpose and Goal of the project </h2>
+
+The Fourier transform is widely used in image compression in order to turn a series of colour values into a series of functions that can approximate those colour values with less space.
+
+My goal in making this project wasn't to create an efficient and sleek application. It was to explore the mathematics and concepts behind lossy compression and create a working implementation of DFT, there are many places where this algorithm could be more efficient (and if you want to create a high performance implementation then refer to the "Optimizations" sections to figure out how to change my algorithm to streamline performance.
+
+My choice of not using libraries (numpy, pillow, etc.) and using python as opposed to something with better performance like C++ was intentional. I wanted to build a fully working prototype from first principles: including all the functionality needed to implement such an algorithm such at image convolutions or the DFT algorithm itself.
+
+My implementations of these algorithms are not generic and are specialized towards the usecase of this project, so be aware that there are superior alternatives if you are trying to adapt them to a different circumstance.
+
+<br><br>
+<h2> Algorithm Overview </h2>
+
+An image is taken as an input, a Sobel filter is passed over it. A list of the edges are written into a CSV file.
+Then a greedy approximation of the Travelling Salesman Problem (TSP) is used to find a suitable path around the edges.
+Once this path is computed the x and y coordinates are separated into 2 different sequences.
+A Discrete Fourier Transform (DFT) is ran over these
+
+<br><br>
+<h2> Disclaimer </h2>
+
+Keep in mind that many of these processes take a moment,
+while the image/csv is processing the pygame window will stop responding.
+Flushing the pygame event queue will fix the freezing but significantly increase the runtime.
+Please be patient and wait for the file to run.
+
+A small image will take under a minute to fully process and then a few minutes to draw.
+Large images can take a very, very long time.
 
 <br><br>
 <h2> Optimizations </h2>
